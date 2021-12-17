@@ -1,0 +1,23 @@
+{
+  "name": "TMS Image Captcha Solver",
+  "description": "Solves TMS image based captchas!",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "/images/captcha_16.png",
+    "32": "/images/captcha_32.png",
+    "48": "/images/captcha_48.png",
+    "128": "/images/captcha_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "include_globs": ["*://*.nepsetms*/login"],
+      "js": ["content.js", "axios.min.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
