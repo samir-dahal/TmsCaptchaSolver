@@ -39,9 +39,8 @@ function imageEncode(arrayBuffer) {
   return b64encoded;
 }
 async function getImageText(base64img) {
-  const res = await axios.post(
-    "https://samir.crystalhost.com.np/api/captchas",
-    { base64Image: base64img }
-  );
+  const res = await axios.post("https://bsite.net/samirdahal/api/captchas", {
+    base64Image: base64img,
+  });
   return res.data.result;
 }
